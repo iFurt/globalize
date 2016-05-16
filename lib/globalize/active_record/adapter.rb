@@ -71,7 +71,7 @@ module Globalize
         column = column_for_attribute(name)
   
 +       if column.respond_to?(:type_cast_from_database)
-+         return translation.present? ? translation.send(name) : default_value(column)
++         translation.present? ? translation.send(name) : default_value(column)
 +       else
 +         translation && translation.send(name)
 +       end
